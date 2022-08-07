@@ -1,11 +1,13 @@
 import React from 'react';
 import Stock from './StockCard'
 
-export default function PortfolioContainer() {
+export default function PortfolioContainer({ myStocks, buyOrSell }) {
   return (
     <div>
-      <h2>My Portfolio - { /* render the total value of the stocks in the portfolio here */}</h2>
-      { /* render the stocks in the user's portfolio using the StockCard component */ }
+      <h2>My Portfolio - { myStocks.reduce((acc, stock)=> acc += stock.price, 0)}</h2>
+      { myStocks.map(stock => {
+        return <Stock key={stock.price} stock={stock} myStocks={myStocks} buyOrSell={buyOrSell} />
+      }) }
     </div>
   );
 }
