@@ -11,6 +11,8 @@ h2 {
   margin: 0 auto;
   text-align: center;
   border: 1px solid black;
+  margin-bottom: 1rem;
+  animation: fadein 1s linear forwards;
 }
 
 .list-group {
@@ -23,4 +25,42 @@ h2 {
   text-align: left;
   padding: 0;
   margin: 0 auto;
+}
+
+main div {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.item-fadeout {
+  animation: fadeout 1s linear forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translate(0, -50%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, -50%);
+  }
 }
