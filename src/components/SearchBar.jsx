@@ -1,6 +1,8 @@
 import React from 'react';
+import { useState } from "react"
 
 export default function SearchBar({ sort, handleSort, handleFilter }) {
+  const [filter, setFilter] = useState()
   // bind the radio inputs' checked prop to boolean state variables
   return (
     <div>
